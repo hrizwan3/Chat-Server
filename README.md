@@ -1,5 +1,5 @@
 # Chat-Server
-
+Features:
 1. User Management:
 Create a system for user registration and authentication.
 Store user information, such as username and password hashes, securely.
