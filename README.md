@@ -1,40 +1,30 @@
-# Chat-Server
-Project Features:
-1. User Management:
-Create a system for user registration and authentication.
-Store user information, such as username and password hashes, securely.
+# Project Proposal: Sudoku Game and Solver in C++
 
-2. Messaging Channels:
-Implement the concept of different channels for conversations.
-Channels can be public (accessible to all users) or private (invitation-based or restricted access).
+Sudoku Game:
+1. Create an interactive Sudoku game with a command line interface (CLI).
+2. Allow users to play Sudoku by inputting numbers into a 9x9 grid.
+3. Implement features such as checking the validity of the entered numbers and providing feedback on incorrect inputs.
 
-3. Real-time Messaging:
-Enable real-time messaging between users within a channel.
-Utilize a simple publish-subscribe pattern for message distribution.
+Sudoku Solver:
+1. Develop a Sudoku solver algorithm that can automatically solve Sudoku puzzles.
+2. Allow users to input unsolved Sudoku puzzles, and the solver will display the solution.
 
-4. Command Line Interface (CLI):
-Develop a user-friendly command line interface for interaction.
-Use std::cout and std::cin for displaying messages and gathering user input.
+User Interface:
+1. Design a user-friendly CLI for the Sudoku game, providing clear instructions and a visually appealing interface.
+Game Difficulty Levels:
+2. Implement different difficulty levels for Sudoku puzzles (easy, medium, hard) to cater to users with varying skill levels.
 
-5. Message Persistence:
-Implement a basic message persistence system to store chat history.
-Use file handling (e.g., std::fstream) to save and load messages.
+Game State Persistence:
+1. Allow users to save and load Sudoku game states to continue playing at a later time.
 
-6. User Commands:
-Allow users to perform actions like joining channels, sending messages, and viewing chat history.
+# C++ Features:
+Object-Oriented Design:
+1. Use classes to represent the Sudoku game, solver, and any other necessary entities.
+2. Encapsulate functionality within classes for modularity.
 
-C++ Features and Project Structure:
+STL Usage:
+1. Utilize the Standard Template Library (STL) for managing data structures such as vectors or arrays for the Sudoku grid.
 
-1. Object-Oriented Approach:
-Use classes to represent User, Channel, and Message entities.
-Encapsulate functionality related to each entity within its respective class.
-
-2. Standard Template Library (STL):
-Leverage STL containers (e.g., std::vector, std::map) for managing user lists, channel lists, and storing messages.
-
-3. Networking:
-Explore C++ networking libraries for basic client-server communication.
-Implement a simple server to manage user connections and handle message distribution.
-
-4. Error Handling:
-Implement basic error handling mechanisms, such as checking for the existence of channels or handling invalid user input.
+Algorithmic Design:
+1. Implement an efficient backtracking algorithm for the Sudoku solver.
+2. Design clear algorithms for user input validation and Sudoku puzzle generation.
