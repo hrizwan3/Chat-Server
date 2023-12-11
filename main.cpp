@@ -12,6 +12,9 @@ using namespace std;
 
 int main(int argc, char* argv[]) {
     cout << endl <<"Hello! Welcome to Fraudulent Sudoku (with a solver)" << endl;
+    cout << "This is a game of Sudoku, where you can play a game, or have the computer solve it for you (by entering -2 -2 -2)" << endl;
+    cout << "You can also save your game and load it later" << endl << endl;
+
     string choices[] = {"Load last game", "Create new game"};
     string boards[] = {"easy1", "easy2", "easy3", "grid1", "grid2"};
 

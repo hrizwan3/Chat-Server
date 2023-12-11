@@ -52,4 +52,3 @@ void displayBoardOptions(const std::string boards[]) {
         std::cout << i + 1 << ". " << boards[i] << std::endl;
     }
 }
-
