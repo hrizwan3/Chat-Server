@@ -1,16 +1,24 @@
-CXX=g++
-CXXFLAGS=-std=c++20 -Wall -Werror -g
-SFMLFLAGS=-lsfml-graphics -lsfml-window -lsfml-system
+CXX = g++
 
-all: a.out
+SFML_INCLUDE = C:/SFML-2.6.1/include
+SFML_LIB = C:/SFML-2.6.1/lib
 
-a.out: main.o sudoku.o cell.o solver.o
-	$(CXX) $(CXXFLAGS) main.o sudoku.o cell.o solver.o $(SFMLFLAGS) -o a.out
+CXXFLAGS = -I$(SFML_INCLUDE) -std=c++11 -Wall
+LDFLAGS = -L$(SFML_LIB) -lmingw32 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-main -mwindows
 
-%.o: %.cpp
-	$(CXX) -c -o $@ $< $(CXXFLAGS)
+SOURCES = main.cpp cell.cpp solver.cpp sudoku.cpp # game.cpp
 
-.PHONY: clean
+OBJECTS = $(SOURCES:.cpp=.o)
+
+EXECUTABLE = app.exe
+
+all: $(SOURCES) $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(OBJECTS) -o $@ $(LDFLAGS)
+
+.cpp.o:
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o a.out
+	del *.o *.exe
