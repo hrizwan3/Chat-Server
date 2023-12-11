@@ -15,16 +15,17 @@ class Cell
 
         Cell& operator=(const Cell& other);
         Cell(Cell&& other) noexcept;
-        Cell& operator=(Cell&& other) noexcept;
+        Cell& Cell::operator=(Cell&& other) noexcept;
 
         // Destructor
         ~Cell();
 
-        void setValue(int val);
-
+        // Getters / Setters
         int getValue() const;
         int getRow() const;
         int getCol() const;
+
+        void setValue(int val);
 
 };
 

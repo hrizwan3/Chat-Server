@@ -3,18 +3,11 @@
 
 using namespace std;
 
+// Constructors
 Sudoku::Sudoku() : board(), rowSet(), colSet(), boxSet() {
     for (int i{0}; i < 9; i++) {
         for (int j{0}; j < 9; j++) {
             board[i][j] = Cell(0, i, j);
-        }
-    }
-}
-
-Sudoku::Sudoku(const Cell (&board)[9][9]) {
-    for (int i{0}; i < 9; i++) {
-        for (int j{0}; j < 9; j++) {
-            this->setCell(i, j, board[i][j].getValue());
         }
     }
 }
@@ -70,7 +63,7 @@ Sudoku& Sudoku::operator=(Sudoku&& other) noexcept {
 // Destructor
 Sudoku::~Sudoku() {}
 
-// Board Operations
+// Cell Operations
 const Cell& Sudoku::getCell(int row, int col) const {
     return board[row][col];
 }
@@ -90,6 +83,8 @@ void Sudoku::setCell(int row, int col, int val) {
     board[row][col].setValue(val);
 }
 
+
+// Board Operations
 bool Sudoku::checkSolved() const {
     std::set<int> completeSet = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
@@ -119,7 +114,7 @@ bool Sudoku::checkSolved() const {
     return true;
 }
 
-
+// Board Operations
 bool Sudoku::isValidMove(int row, int col, int val) const {
     if (rowSet[row].find(val) != rowSet[row].end()) return false;
     if (colSet[col].find(val) != colSet[col].end()) return false;
@@ -128,6 +123,7 @@ bool Sudoku::isValidMove(int row, int col, int val) const {
     return true;
 }
 
+// Pretty print board
 void Sudoku::printBoard() const {
     std::cout << "-------------------------\n";
     for (int i = 0; i < 9; i++) {
@@ -173,6 +169,7 @@ bool Sudoku::solve() {
     // Try each value in the empty cell
     for (int val{1}; val <= 9; val++) {
         if (isValidMove(row, col, val)) {
+            
             setCell(row, col, val);
             if (solve()) {
                 return true;

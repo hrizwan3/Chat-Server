@@ -4,27 +4,25 @@
 
 using namespace std;
 
-/***************************
- * 
- * 
- * 
- * ****************************/
 
 int main(int argc, char* argv[]) {
+    // Instructions for the game
     cout << endl <<"Hello! Welcome to Fraudulent Sudoku (with a solver)" << endl;
     cout << "This is a game of Sudoku, where you can play a game, or have the computer solve it for you (by entering -2 -2 -2)" << endl;
     cout << "You can also save your game and load it later" << endl << endl;
 
-    string choices[] = {"Load last game", "Create new game"};
+    // Game options
+    string choices[] = {"Load last game", "Start new game"};
     string boards[] = {"easy1", "easy2", "easy3", "grid1", "grid2"};
 
+    // Game selection
     cout << "Please select an option:" << endl;
     displayGameOptions(choices);
     int val;
     cin >> val;
-
     cout << "You selected: " << choices[val - 1] << endl;
 
+    // Load game
     Sudoku sudoku;
     if (val == 1) {
         if (!loadSudoku(sudoku, "saves/save.txt")) {
@@ -38,7 +36,8 @@ int main(int argc, char* argv[]) {
         loadSudoku(sudoku, ("preset-games/" + boards[val - 1] + ".txt").c_str());
     }
 
-    bool player{true};
+    // Play game
+    bool player{true}; // true if player is playing, false if computer is solving
 
     while (!sudoku.checkSolved()) {
         sudoku.printBoard();
@@ -64,6 +63,7 @@ int main(int argc, char* argv[]) {
         }
     }
 
+    // End game
     if (player && sudoku.checkSolved()) {
         cout << "Congratulations! You solved the puzzle!" << endl;
     } else if (sudoku.checkSolved()) {

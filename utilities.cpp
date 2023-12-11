@@ -4,6 +4,7 @@
 
 using namespace std;
 
+// Load Sudoku from file
 bool loadSudoku(Sudoku& sudoku, const char* filename) {
     ifstream file(filename);
     if (!file.is_open()) {
@@ -25,6 +26,7 @@ bool loadSudoku(Sudoku& sudoku, const char* filename) {
     return true;
 }
 
+// Save Sudoku to file
 bool saveSudoku(const Sudoku& sudoku, const char* filename) {
     ofstream file(filename);
     if (!file.is_open()) {
@@ -41,6 +43,7 @@ bool saveSudoku(const Sudoku& sudoku, const char* filename) {
     return true;
 }
 
+// Display options
 void displayGameOptions(const std::string options[]) {
     for (int i{0}; i < 2; i++) {
         std::cout << i + 1 << ". " << options[i] << std::endl;
