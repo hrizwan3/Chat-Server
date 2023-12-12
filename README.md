@@ -6,13 +6,13 @@ Sudoku Game:
 3. Implement features such as checking the validity of the entered numbers and providing feedback on incorrect inputs.
 
 Sudoku Solver:
-Develop a Sudoku solver algorithm that can automatically solve Sudoku puzzles.
+Develop a Sudoku solver algorithm that can automatically solve Sudoku puzzles (if you enter -2 -2 -2)
 
 User Interface:
 Design a user-friendly CLI for the Sudoku game, providing clear instructions and a visually appealing interface.
 
 Game State Persistence:
-1. Allow users to save and load Sudoku game states to continue playing at a later time.
+1. Allow users to save and load Sudoku game states to continue playing at a later time (using -1 -1 -1)
 
 # C++ Features:
 Object-Oriented Design:

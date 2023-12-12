@@ -56,6 +56,8 @@ int main(int argc, char* argv[]) {
             sudoku.solve();
             player = false;
             break;
+        } else if (val < 1 || val > 9 || row < 1 || row > 9 || col < 1 || col > 9) {
+            cout << "Invalid move!" << endl;
         } else if (sudoku.isValidMove(row - 1, col - 1, value)) {
             sudoku.setCell(row - 1, col - 1, value);
         } else {
